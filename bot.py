@@ -1,7 +1,9 @@
 import telebot
-import config
+import os
 
-client = telebot.TeleBot(config.configure['token']) # Передаём токен.
+token = os.environ.get('TOKEN')
+
+client = telebot.TeleBot(str(token)) # Передаём токен.
 
 hi_words = ['hi', 'hello', 'привет', 'здравствуй', 'ку', 'бонжур', 'салам', 'дарова', 'здарова', 'утречка']
 answer_words = ['info', 'information', 'инфа', 'инфо', 'информация']
